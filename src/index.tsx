@@ -8,9 +8,10 @@ import ThirdPage from './Third';
 const Tab = createBottomTabNavigator();
 import { FunctionsProvider } from './contexts/functionsContext';
 
-export const ComplicatedModal = ({ onFinish = () => {} }): JSX.Element => {
+// @ts-ignore
+export const ComplicatedModal = ({ navigator }): JSX.Element => {
   return (
-    <FunctionsProvider onFinish={onFinish}>
+    <FunctionsProvider navigator={navigator}>
       <Tab.Navigator>
         <Tab.Screen name="FIRST" component={FirstPage} />
         <Tab.Screen name="SECOND" component={SecondPage} />

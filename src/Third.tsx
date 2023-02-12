@@ -5,7 +5,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import { useFunctions } from './contexts/functionsContext';
 
 function ThirdPage(): JSX.Element {
-  const { onFinish } = useFunctions();
+  const { navigator } = useFunctions();
 
   return (
     <View style={styles.container}>
@@ -13,7 +13,9 @@ function ThirdPage(): JSX.Element {
       <Button
         title="go to third"
         onPress={() => {
-          onFinish();
+          console.log(navigator);
+          // @ts-ignore
+          navigator.goBack();
         }}
       />
     </View>

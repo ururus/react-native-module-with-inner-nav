@@ -1,13 +1,13 @@
 import React, { createContext, useContext } from 'react';
 
 export const FunctionsContext = createContext({
-  onFinish: () => null,
+  navigator: null,
 });
 
 // @ts-ignore
-export const FunctionsProvider = ({ onFinish, children }) => {
+export const FunctionsProvider = ({ navigator, children }) => {
   return (
-    <FunctionsContext.Provider value={{ onFinish }}>
+    <FunctionsContext.Provider value={{ navigator }}>
       {children}
     </FunctionsContext.Provider>
   );
